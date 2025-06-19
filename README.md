@@ -1,7 +1,9 @@
 # C-IN-OOP-EXAM_HUYE_223003521_TUYIZERE-FEDERANCE
 
 
+
 **ATM CASH DISPENSER SIMUATION**
+
 
 **TASK OVERVIEW**
 
@@ -31,105 +33,155 @@ Finally, it calls the dispensing function and shows the results.
 
 **CODE EXPLANATION**
 
-#include <iostream>
+
+**#include <iostream>**
 Includes the input/output stream library needed for console I/O.
-using namespace std;
+
+**using namespace std;**
 Avoids needing to prefix std:: before common functions like cout and cin.
-struct Denomination {
+
+**struct Denomination {**
 Defines a structure to hold information about each note: its value and count.
-int value;
+
+**int value;**
 Note value (ex, 100, 50).
-int count;
+
+**int count;**
 Number of such notes available.
-};
+
+**};**
 End of struct definition.
-const int SIZE = 3;
+
+**const int SIZE = 3;**
 Sets the number of denominations to be handled to 3.
-void sortDescending(Denomination denoms[]) {
+
+**void sortDescending(Denomination denoms[]) {**
 Declares a function to sort the array of denominations in descending order by their value.
-for (int i = 0; i < SIZE - 1; i++) {
+
+**for (int i = 0; i < SIZE - 1; i++) {**
 Outer loop for selection sort. Iterates through elements.
-for (int j = i + 1; j < SIZE; j++) {
+
+**for (int j = i + 1; j < SIZE; j++) {**
 Inner loop compares current element with next elements.
-if (denoms[i].value < denoms[j].value) {
+
+**if (denoms[i].value < denoms[j].value) {**
 If current value is less, swap to bring larger value forward.
-Denomination temp = denoms[i];
+
+**Denomination temp = denoms[i];**
 Temporary variable to hold current element.
-denoms[i] = denoms[j];
+
+**denoms[i] = denoms[j];**
 Swap elements.
-denoms[j] = temp;
+
+**denoms[j] = temp;**
 Complete the swap.
-}
+
+**}**
 End of if condition.
-}
+
+**}**
 End of inner loop.
-}
+
+**}**
 End of outer loop.
-}
+
+**}**
 End of sorting function.
-bool dispenseCash(Denomination denoms[], int amount) {
+
+**bool dispenseCash(Denomination denoms[], int amount) {**
 Function attempts to dispense the requested amount. Returns true if successful.
-sortDescending(denoms);
+
+**sortDescending(denoms);**
 Sort denominations from highest to lowest.
-cout << "\nDispensing amount: " << amount << endl;
+
+**cout << "\nDispensing amount: " << amount << endl;**
 Prints the amount to withdraw.
-for (int i = 0; i < SIZE; i++) {
+
+**for (int i = 0; i < SIZE; i++) {**
 Iterate over each denomination.
-while (amount >= denoms[i].value && denoms[i].count > 0) {
+
+**while (amount >= denoms[i].value && denoms[i].count > 0) {**
 Dispense notes while possible.
-amount -= denoms[i].value;
+
+**amount -= denoms[i].value;**
 Reduce amount by note value.
-denoms[i].count--;
+
+**denoms[i].count--;**
 Decrease available note count.
-cout << "  Dispensed: " << denoms[i].value << endl;
+
+**cout << "  Dispensed: " << denoms[i].value << endl;**
 Print the dispensed note.
-}
+
+**}**
 End dispensing loop for this denomination.
-}
+
+**}**
 End denomination loop.
-if (amount == 0) {
+
+**if (amount == 0) {**
 Check if full amount dispensed.
-cout << "Successfully dispensed full amount.\n";
+
+**cout << "Successfully dispensed full amount.\n";**
 Print success message.
-return true;
+
+**return true;**
 Return success.
-} else {
+
+**} else {**
 If amount remains.
-cout << "Cannot dispense full amount. Remaining: " << amount << endl;
+
+**cout << "Cannot dispense full amount. Remaining: " << amount << endl;**
 Print failure message.
-return false;
+
+**return false;**
 Return failure.
-}
+
+**}**
 End if-else.
-}
+
+**}**
 End dispenseCash function.
-int main() {
+
+**int main() {**
 Main program execution starts here.
-Denomination denoms[SIZE];
+
+**Denomination denoms[SIZE];**
 Declare array of denominations.
-for (int i = 0; i < SIZE; i++) {
+
+**for (int i = 0; i < SIZE; i++) {**
 Loop to get user input.
-cout << "Enter denomination value #" << (i + 1) << ": ";
+
+**cout << "Enter denomination value #" << (i + 1) << ": ";**
 Prompt for denomination value.
-cin >> denoms[i].value;
+
+**cin >> denoms[i].value;**
 Read denomination value.
-cout << "Enter count for " << denoms[i].value << ": ";
+
+**cout << "Enter count for " << denoms[i].value << ": ";**
 Prompt for note count.
-cin >> denoms[i].count;
+
+**cin >> denoms[i].count;**
 Read note count.
-}
+
+**}**
 End input loop.
-int amount;
+
+**int amount;**
 Declare variable for withdrawal amount.
-cout << "\nEnter amount to withdraw: ";
+
+**cout << "\nEnter amount to withdraw: ";**
 Prompt for amount.
-cin >> amount;
+
+**cin >> amount;**
 Read amount.
-dispenseCash(denoms, amount);
+
+**dispenseCash(denoms, amount);**
 Call function to dispense cash.
-return 0;
+
+**return 0;**
 End program.
-}
+
+**}**
 End main function
 
 
