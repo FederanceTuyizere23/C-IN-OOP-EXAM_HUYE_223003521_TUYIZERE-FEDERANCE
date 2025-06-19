@@ -1,8 +1,10 @@
 # C-IN-OOP-EXAM_HUYE_223003521_TUYIZERE-FEDERANCE
 
 
-ATM CASH DISPENSER SIMUATION
-TASK OVERVIEW
+**ATM CASH DISPENSER SIMUATION**
+
+**TASK OVERVIEW**
+
 The job was to create a C++ program that simulates an ATM cash dispenser. It should:
 Let users enter different currency types and how many notes of each are available.
 Take in an amount the user wants to withdraw.
@@ -10,7 +12,10 @@ Try to give out that amount using the available notes, starting with the biggest
 Show which notes were given out.
 Let the user know if the exact amount can't be dispensed.
 This project covers basic programming ideas like structures, arrays, sorting, loops, conditionals, and functions in C++.
-HOW IT WAS DONE/COMPLETED
+
+
+**HOW IT WAS DONE/COMPLETED**
+
 To get this done:
 A `Denomination` struct was made to hold the note values and their counts.
 A constant integer `SIZE` was set to keep track of how many denominations there are.
@@ -22,7 +27,10 @@ It prints each note given out.
 It tells whether the full amount was dispensed or not.
 The `main` function gathers what the user inputs for the denominations, their counts, and the amount to withdraw.
 Finally, it calls the dispensing function and shows the results.
-CODE EXPLANATION
+
+
+**CODE EXPLANATION**
+
 #include <iostream>
 Includes the input/output stream library needed for console I/O.
 using namespace std;
